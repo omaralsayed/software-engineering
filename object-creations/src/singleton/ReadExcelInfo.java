@@ -106,6 +106,7 @@ public class ReadExcelInfo {
 			}
 			
 			zipMax.remove(0);
+			wb.close();
 		}
 				
 		catch(Exception e) {
