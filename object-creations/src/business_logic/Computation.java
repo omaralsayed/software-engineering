@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import factory.Person;
 import DAO.FileIO;
 
 public class Computation {
@@ -19,7 +21,7 @@ public class Computation {
 		mapList = f.getMap(file);
 	}
 
-	// Print name and zip code
+	//print name and zip code
 	public List<String> printAllNameAndZipCode() {
 		Set set = mapList.entrySet();// Converting to Set so that we can traverse
 		Iterator itr = set.iterator();
@@ -34,6 +36,22 @@ public class Computation {
 			printList.add("First name: " + firstName);
 			printList.add("Last name: " + lastName);
 			printList.add("ZIP Code: " + zipCode);
+		}
+		return printList;
+	}
+	
+	
+	public List<Person> getAllNameAndZipCode() {
+		Set set = mapList.entrySet();// Converting to Set so that we can traverse
+		Iterator itr = set.iterator();
+		List<Person> printList = new ArrayList<Person>();
+		while (itr.hasNext()) {
+			// Converting to Map.Entry so that we can get key and value separately
+			Map.Entry entry = (Map.Entry) itr.next();
+			String firstName = entry.getKey().toString().split(" ")[0].toString();
+			String lastName = entry.getKey().toString().split(" ")[1].toString();
+			String address = entry.getValue().toString();
+			printList.add(new Person(firstName + " " + lastName, address));
 		}
 		return printList;
 	}
