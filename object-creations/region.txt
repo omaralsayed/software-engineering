@@ -1,0 +1,152 @@
+state: CT
+region: Northeast, US
+
+state: ME
+region: Northeast, US
+
+state: MA
+region: Northeast, US
+
+state: NH
+region: Northeast, US
+
+state: RI
+region: Northeast, US
+
+state: VT
+region: Northeast, US
+
+state: NJ
+region: Northeast, US
+
+state: NY
+region: Northeast, US
+
+state: PA
+region: Northeast, US
+
+state: IL
+region: Midwest, US
+
+state: IN
+region: Midwest, US
+
+state: MI
+region: Midwest, US
+
+state: OH
+region: Midwest, US
+
+state: WI
+region: Midwest, US
+
+state: IA
+region: Midwest, US
+
+state: KS
+region: Midwest, US
+
+state: MN
+region: Midwest, US
+
+state: MO
+region: Midwest, US
+
+state: NE
+region: Midwest, US
+
+state: ND
+region: Midwest, US
+
+state: SD
+region: Midwest, US
+
+state: DE
+region: South, US
+
+state: FL
+region: South, US
+
+state: GA
+region: South, US
+
+state: MD
+region: South, US
+
+state: NC
+region: South, US
+
+state: SC
+region: South, US
+
+state: VA
+region: South, US
+
+state: DC
+region: South, US
+
+state: WV
+region: South, US
+
+state: AL
+region: South, US
+
+state: KY
+region: South, US
+
+state: MS
+region: South, US
+
+state: TN
+region: South, US
+
+state: AR
+region: South, US
+
+state: LA
+region: South, US
+
+state: OK
+region: South, US
+
+state: TX
+region: South, US
+
+state: AZ
+region: West, US
+
+state: CO
+region: West, US
+
+state: ID
+region: West, US
+
+state: MT
+region: West, US
+
+state: NV
+region: West, US
+
+state: NM
+region: West, US
+
+state: UT
+region: West, US
+
+state: WY
+region: West, US
+
+state: AK
+region: West, US
+
+state: CA
+region: West, US
+
+state: HI
+region: West, US
+
+state: OR
+region: West, US
+
+state: WA
+region: West, US

@@ -1,0 +1,152 @@
+state: CT
+pres: Blue
+
+state: ME
+pres: Blue
+
+state: MA
+pres: Blue
+
+state: NH
+pres: Blue
+
+state: RI
+pres: Blue
+
+state: VT
+pres: Blue
+
+state: NJ
+pres: Blue
+
+state: NY
+pres: Blue
+
+state: PA
+pres: Red
+
+state: IL
+pres: Blue
+
+state: IN
+pres: Red
+
+state: MI
+pres: Red
+
+state: OH
+pres: Red
+
+state: WI
+pres: Red
+
+state: IA
+pres: Red
+
+state: KS
+pres: Red
+
+state: MN
+pres: Blue
+
+state: MO
+pres: Red
+
+state: NE
+pres: Blue
+
+state: ND
+pres: Red
+
+state: SD
+pres: Red
+
+state: DE
+pres: Blue
+
+state: FL
+pres: Red
+
+state: GA
+pres: Red
+
+state: MD
+pres: Blue
+
+state: NC
+pres: Red
+
+state: SC
+pres: Red
+
+state: VA
+pres: Blue
+
+state: DC
+pres: Blue
+
+state: WV
+pres: Red
+
+state: AL
+pres: Red
+
+state: KY
+pres: Red
+
+state: MS
+pres: Red
+
+state: TN
+pres: Red
+
+state: AR
+pres: Red
+
+state: LA
+pres: Red
+
+state: OK
+pres: Red
+
+state: TX
+pres: Red
+
+state: AZ
+pres: Red
+
+state: CO
+pres: Blue
+
+state: ID
+pres: Red
+
+state: MT
+pres: Red
+
+state: NV
+pres: Blue
+
+state: NM
+pres: Blue
+
+state: UT
+pres: Red
+
+state: WY
+pres: Red
+
+state: AK
+pres: Red
+
+state: CA
+pres: Blue
+
+state: HI
+pres: Blue
+
+state: OR
+pres: Blue
+
+state: WA
+pres: Blue
