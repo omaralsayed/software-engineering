@@ -1,18 +1,14 @@
 package prototype;
 
-
-// Base class "Person"
 public abstract class Person implements Cloneable {
 	private String name; 
 	private String state;
 	protected String region;
 	
 	public Person() {
-		// Default Constructor
+		// Default constructor
 	}
-	
-	abstract void create(); 
-	
+		
 	public String getName() {
 		return name;
 	}

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import DAO.FileIORegion;
 
-
 // Match person to the region/color they are from and return 
 public class FindResult {
 	public int counter = 0;

@@ -1,6 +1,5 @@
 package prototype;
 
-// Imports
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -13,7 +12,6 @@ import prototype.Northeast;
 import prototype.South;
 import prototype.West;
 
-	
 public abstract class FindRegions {
 	public static Hashtable<String, Person> personMap = new Hashtable<String, Person>();
 
@@ -49,6 +47,7 @@ public abstract class FindRegions {
 				
 				personMap.put(temp.getName() + temp.getState(), temp);  // Put the name and state of person as key, the Person Object as value
 			} 
+			
 			else if (regionMatch.equals("Northeast")) {
 				Northeast temp = new Northeast();
 				
@@ -57,6 +56,7 @@ public abstract class FindRegions {
 				
 				personMap.put(temp.getName() + temp.getState(), temp);
 			} 
+			
 			else if (regionMatch.equals("West")) {
 				West temp = new West();
 				
@@ -65,6 +65,7 @@ public abstract class FindRegions {
 				
 				personMap.put(temp.getName() + temp.getState(), temp);
 			} 
+			
 			else if (regionMatch.equals("South")) {
 				South temp = new South();
 				
@@ -82,11 +83,11 @@ public abstract class FindRegions {
 	public static void loadPeople() {
 		Set<String> keys = personMap.keySet();
 		
-		// Loop through entire Hashtable
+		// Loop through entire map
 		for (String key : keys) {
 			Person clonePerson = (Person) FindRegions.getPerson(key);	// Clones people based off of key (which is name and state)
 			
-			System.out.print(key + "\nRegion: " + clonePerson.getRegion() + "\n\n");		// Printing out the name, state, and region of each person
+			System.out.print(key + "\nRegion: " + clonePerson.getRegion() + "\n\n");	// Printing out the name, state, and region of each person
 		}
 	}
 }
