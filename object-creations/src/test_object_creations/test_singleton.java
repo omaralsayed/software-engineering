@@ -7,31 +7,27 @@ import java.util.ArrayList;
 import singleton.ReadExcelInfo;
 
 class test_singleton {
-	
-	/*
-	 * Alphabetical prefix added to control the order of testing
-	 */
 
-	@Test
-	void A_allArrayListsShouldContainSameNmberOfElements() {
+	@Test // File Processing
+	void A_allArrayListsShouldContainSameNumberOfElements() {
 		ReadExcelInfo readFile = ReadExcelInfo.getInstance();
 		readFile.save("zipCode_info.xlsx");
 
-        assertEquals(readFile.getId().size(), readFile.getName().size(), "Size must be equal");
-        assertEquals(readFile.getName().size(), readFile.getSt().size(), "Size must be equal");
-        assertEquals(readFile.getSt().size(), readFile.getZipMin().size(), "Size must be equal");
-        assertEquals(readFile.getZipMin().size(), readFile.getZipMax().size(), "Size must be equal");
+        assertEquals(readFile.getId().size(), readFile.getName().size(), "Number of elements must be the same");
+        assertEquals(readFile.getName().size(), readFile.getSt().size(), "Number of elements must be the same");
+        assertEquals(readFile.getSt().size(), readFile.getZipMin().size(), "Number of elements must be the same");
+        assertEquals(readFile.getZipMin().size(), readFile.getZipMax().size(), "Number of elements must be the same");
 	}
 	
-	@Test
+	@Test // Singleton
 	void B_memoryAddressShouldBeSame() {
 		ReadExcelInfo getInstanceOne = ReadExcelInfo.getInstance();
 		ReadExcelInfo getInstanceTwo = ReadExcelInfo.getInstance();
 		
-		assertEquals(getInstanceOne, getInstanceTwo, "Memory address should be equal");
+		assertEquals(getInstanceOne, getInstanceTwo, "Memory address must be the same");
 	}
 	
-	@Test
+	@Test // Singleton
 	void C_secondGetterShouldReturnAnEmptyArrayList() {
 		ReadExcelInfo getInstanceOne = ReadExcelInfo.getInstance();
 		getInstanceOne.save("zipCode_info.xlsx");
@@ -43,7 +39,7 @@ class test_singleton {
 		
 		ArrayList<String> empty = new ArrayList<String>();
 		
-		assertEquals(getInstanceTwo.getId(), empty, "Must be true due to singleton pattern");
+		assertEquals(getInstanceTwo.getId(), empty, "Data structures must be empty");
 	}
 
 }
