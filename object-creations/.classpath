@@ -6,10 +6,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Omar/eclipse-workspace/object-creations/apache/commons-collections4-4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Omar/eclipse-workspace/object-creations/apache/poi-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Omar/eclipse-workspace/object-creations/apache/poi-ooxml-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Omar/eclipse-workspace/object-creations/apache/poi-ooxml-schemas-3.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Omar/eclipse-workspace/object-creations/apache/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="apache/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="apache/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="apache/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="apache/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="apache/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
