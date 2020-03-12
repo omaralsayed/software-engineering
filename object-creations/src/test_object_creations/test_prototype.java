@@ -1,16 +1,10 @@
 package test_object_creations; 
 
-import static org.junit.jupiter.api.Assertions.*; 
-
+import static org.junit.jupiter.api.Assertions.*;  
 import org.junit.jupiter.api.Test;
-
-import factory.InvalidZip;
-import factory.ValidZip;
-import factory.ZipCode;
 
 import java.io.IOException;
 
-import prototype.FindRegions;
 import prototype.FindResult;
 import prototype.Midwest;
 import prototype.West;
