@@ -3,6 +3,7 @@ package prototype;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import DAO.FileIORegion;
@@ -23,15 +24,15 @@ public class FindResult {
 
 	// Find the region/state color for the person, returns the match
 	public String match(String state) {
-		Set set = mapList.entrySet(); 	// Converting to Set in order to traverse
-		Iterator i = set.iterator(); 
+		Set<Entry<String, String>> set = mapList.entrySet(); 	// Converting to Set in order to traverse
+		Iterator<Entry<String, String>> i = set.iterator(); 
 		String result = new String();
 		
 		// Iterate until you find the state and region
 		while (i.hasNext()) {
 			
 			// Convert to Map.Entry to get key and value separately
-			Map.Entry entry = (Map.Entry) i.next(); 
+			Map.Entry<String, String> entry = (Map.Entry<String, String>) i.next(); 
 			
 			// Finding values from map in order to get the correct value associated with the state
 			String compareState = entry.getKey().toString();
