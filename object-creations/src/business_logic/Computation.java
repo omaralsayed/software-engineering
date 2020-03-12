@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import factory.Person;
@@ -21,14 +22,14 @@ public class Computation {
 		mapList = f.getMap(file);
 	}
 
-	//print name and zip code
+	// Print name and zip code
 	public List<String> printAllNameAndZipCode() {
-		Set set = mapList.entrySet();// Converting to Set so that we can traverse
-		Iterator itr = set.iterator();
+		Set<Entry<String, String>> set = mapList.entrySet();// Converting to Set so that we can traverse
+		Iterator<Entry<String, String>> itr = set.iterator();
 		List<String> printList = new ArrayList<String>();
 		while (itr.hasNext()) {
 			// Converting to Map.Entry so that we can get key and value separately
-			Map.Entry entry = (Map.Entry) itr.next();
+			Map.Entry<String, String> entry = (Map.Entry<String, String>) itr.next();
 			String firstName = entry.getKey().toString().split(" ")[0].toString();
 			String lastName = entry.getKey().toString().split(" ")[1].toString();
 			String[] address = entry.getValue().toString().split(",");
@@ -42,12 +43,12 @@ public class Computation {
 	
 	
 	public List<Person> getAllNameAndZipCode() {
-		Set set = mapList.entrySet();// Converting to Set so that we can traverse
-		Iterator itr = set.iterator();
+		Set<Entry<String, String>> set = mapList.entrySet();// Converting to Set so that we can traverse
+		Iterator<Entry<String, String>> itr = set.iterator();
 		List<Person> printList = new ArrayList<Person>();
 		while (itr.hasNext()) {
 			// Converting to Map.Entry so that we can get key and value separately
-			Map.Entry entry = (Map.Entry) itr.next();
+			Map.Entry<String, String> entry = (Map.Entry<String, String>) itr.next();
 			String firstName = entry.getKey().toString().split(" ")[0].toString();
 			String lastName = entry.getKey().toString().split(" ")[1].toString();
 			String address = entry.getValue().toString();

@@ -45,7 +45,7 @@ class test_singleton {
 		
 		ArrayList<String> empty = new ArrayList<String>();
 		
-		// Assert statement				
+		// Assert statement			
 		assertEquals(getInstanceTwo.getId(), empty, "Data structures must be empty");
 	}
 
