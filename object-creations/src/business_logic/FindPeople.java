@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import DAO.FileIOPeople;
 
 
 public class FindPeople {
-	public int counter = 0;
-
+	
 	private Map<String, String> mapList;
 
 	public FindPeople(String file) throws IOException {
@@ -21,14 +21,14 @@ public class FindPeople {
 
 	// Print name and zip code
 	public List<String> printNameAndState() {
-		Set set = mapList.entrySet(); 	// Converting to Set so that we can traverse
-		Iterator itr = set.iterator();
+		Set<Entry<String, String>> set = mapList.entrySet(); 	// Converting to Set so that we can traverse
+		Iterator<Entry<String, String>> itr = set.iterator();
 		List<String> printList = new ArrayList<String>();
 		
 		while (itr.hasNext()) {
 			
 			// Converting to Map.Entry so that we can get key and value separately
-			Map.Entry entry = (Map.Entry) itr.next();
+			Map.Entry<String, String> entry = (Map.Entry<String, String>) itr.next();
 			
 			// Finding values from the map
 			String firstName = entry.getKey().toString().split(" ")[0].toString();
