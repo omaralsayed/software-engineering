@@ -52,13 +52,18 @@ public class ZipFactory {
 		
 		//	Break apart address
 		String parts[] = address.split(",");
-		String zip = parts[parts.length - 1].substring(1);
-		String state = parts[parts.length - 2].substring(1);
+		String zip = parts[parts.length - 1];
+		String state = parts[parts.length - 2];
 		
 		//	Check if state or ZIP are invalid length
-		if(state.length() != 2 || zip.length() != 5){
+		if(state.length() != 3 || zip.length() != 6){
 			return false;
 		}
+		
+		//	Cut off space
+		if(zip.charAt(0) != ' ' || state.charAt(0) != ' ') return false;
+		zip = zip.substring(1);
+		state = state.substring(1);
 		
 		//	Get index of state (if it exists)
 		if((index = stateData.indexOf(state)) == -1){
