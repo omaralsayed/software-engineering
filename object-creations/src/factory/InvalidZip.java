@@ -9,7 +9,7 @@ public class InvalidZip implements ZipCode{
 		info.setAddress(addressIn);
 	}
 	
-	public Person getAddress(){
+	public Person getPerson(){
 		return info;
 	}
 	
@@ -18,9 +18,7 @@ public class InvalidZip implements ZipCode{
 	}
 	
 	public void display(){
-		System.out.println("Zip Valid:\t" + isValid());
+		System.out.println("invalid zip code");
 	}
-	
-	
 	
 }

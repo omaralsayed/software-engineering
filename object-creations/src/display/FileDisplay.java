@@ -33,7 +33,10 @@ public class FileDisplay {
 		ArrayList<ZipCode> zips = new ArrayList<ZipCode>();
 		
 		for (Person person : people) zips.add(factory.getZip(person));
-		for (ZipCode zip : zips) System.out.println(zip.isValid() + " | " + zip.getAddress().getName());
+		for (ZipCode zip : zips) {
+			System.out.println("\n" + zip.getPerson().getName() + ":");
+			zip.display();
+		}
 	}
 	
 }

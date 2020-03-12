@@ -4,6 +4,6 @@ public interface ZipCode {
 	
 	public boolean isValid();
 	public void display();
-	public Person getAddress();
+	public Person getPerson();
 	
 }
