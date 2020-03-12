@@ -16,8 +16,8 @@ class test_singleton {
 
 		// Assert statements
         assertEquals(readFile.getId().size(), readFile.getName().size(), "Number of elements must be the same");
-        assertEquals(readFile.getName().size(), readFile.getSt().size(), "Number of elements must be the same");
-        assertEquals(readFile.getSt().size(), readFile.getZipMin().size(), "Number of elements must be the same");
+        assertEquals(readFile.getName().size(), readFile.getState().size(), "Number of elements must be the same");
+        assertEquals(readFile.getState().size(), readFile.getZipMin().size(), "Number of elements must be the same");
         assertEquals(readFile.getZipMin().size(), readFile.getZipMax().size(), "Number of elements must be the same");
 	}
 	

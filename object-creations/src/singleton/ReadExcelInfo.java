@@ -9,11 +9,12 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook; 
 
 public class ReadExcelInfo {
+	
 	private static ReadExcelInfo single_instance = null;
 	
 	private static ArrayList<String> id = new ArrayList<String>();
 	private static ArrayList<String> name = new ArrayList<String>();
-	private static ArrayList<String> st = new ArrayList<String>();
+	private static ArrayList<String> state = new ArrayList<String>();
 	private static ArrayList<String> zipMin = new ArrayList<String>();
 	private static ArrayList<String> zipMax = new ArrayList<String>();
 	
@@ -21,7 +22,7 @@ public class ReadExcelInfo {
 		// Default constructor
 	}
 	
-	// Create a single instance of ReadExcelInfo 
+	// Create a single instance of ReadExcelInfo
 	public static ReadExcelInfo getInstance() {
 		if (single_instance == null) {
 			single_instance = new ReadExcelInfo(); 
@@ -29,22 +30,37 @@ public class ReadExcelInfo {
 		return single_instance;
 	}
 
+	/**
+	 * @return the id
+	 */
 	public ArrayList<String> getId() {
 		return id;
 	}
 	
+	/**
+	 * @return the name
+	 */
 	public ArrayList<String> getName() {
 		return name;
 	}
 	
-	public ArrayList<String> getSt() {
-		return st;
+	/**
+	 * @return the state
+	 */
+	public ArrayList<String> getState() {
+		return state;
 	}
 	
+	/**
+	 * @return the zipMin
+	 */
 	public ArrayList<String> getZipMin() {
 		return zipMin;
 	}
 	
+	/**
+	 * @return the zipMax
+	 */
 	public ArrayList<String> getZipMax() {
 		return zipMax;
 	}
@@ -82,10 +98,10 @@ public class ReadExcelInfo {
 			for (Row r : sheet) {
 			   Cell c = r.getCell(2);
 			   if (c != null && c.getCellType() == Cell.CELL_TYPE_STRING)
-				   st.add(c.getStringCellValue());
+				   state.add(c.getStringCellValue());
 			}
 			
-			st.remove(0);
+			state.remove(0);
 			
 			for (Row r : sheet) {
 			   Cell c = r.getCell(3);
@@ -110,7 +126,8 @@ public class ReadExcelInfo {
 		}
 				
 		catch(Exception e) {
-		e.printStackTrace();  
+			e.printStackTrace();  
 		}
 	}
+	
 }

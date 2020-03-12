@@ -9,27 +9,42 @@ public abstract class Person implements Cloneable {
 		// Default constructor
 	}
 		
+	/**
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 	
-	public String getState() {
-		return state;
-	}
-	
-	public String getRegion() {
-		return region;
-	}
-	
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
+	}
+	
+	/**
+	 * @param state the state to set
+	 */
 	public void setState(String state) {
 		this.state = state;
 	}
 	
-	// When Person.clone() is called, it clones the person instance
+	/**
+	 * @return the region
+	 */
+	public String getRegion() {
+		return region;
+	}
+	
+	// A method to clone a person instance
 	public Object clone() {
 		Object clone = null; 
 		

@@ -5,27 +5,41 @@ public class Person {
 	private String name;
 	private String address;
 	
-	public Person(){}
+	public Person() {
+		// Default constructor
+	}
 	
-	public Person(String nameIn, String addressIn){
+	public Person(String nameIn, String addressIn) {
 		name = nameIn;
 		address = addressIn;
 	}
 	
-	public String getName(){
+	/**
+	 * @return the name
+	 */
+	public String getName() {
 		return name;
 	}
-	
-	public String getAddress(){
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
 		return address;
 	}
-	
-	public void setName(String nameIn){
-		name = nameIn;
-	}
-	
-	public void setAddress(String addressIn){
-		address = addressIn;
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 }

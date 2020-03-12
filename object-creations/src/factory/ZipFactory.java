@@ -18,7 +18,7 @@ public class ZipFactory {
 		//	Store requirements in lists
 		zipHigh = zipInfo.getZipMax();
 		zipLow = zipInfo.getZipMin();
-		stateData = zipInfo.getSt();
+		stateData = zipInfo.getState();
 		
 	}
 	
@@ -71,7 +71,7 @@ public class ZipFactory {
 		}
 		
 		//	Parse strings into INTs
-		try{
+		try {
 			zipInt = Integer.parseInt(zip);
 			zipHighInt = Integer.parseInt(zipHigh.get(index));
 			zipLowInt = Integer.parseInt(zipLow.get(index));
