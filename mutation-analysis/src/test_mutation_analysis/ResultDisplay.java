@@ -39,9 +39,24 @@ class ResultDisplay {
 		assertEquals(Selection.SelectionRedStateList.size(), 30);
 		
 		// Region
-		
+		assertEquals(District.officialRegionList.size(), 4);
+		assertEquals(District.NortheastAbbreviationList.size(), 9);
+		assertEquals(District.MidwestAbbreviationList.size(), 12);
+		assertEquals(District.SouthAbbreviationList.size(), 17);
+		assertEquals(District.WestAbbreviationList.size(), 13);
 		
 		// District
+		assertEquals(District.Division1_List.size(), 6);
+		assertEquals(District.Division2_List.size(), 3);
+		assertEquals(District.Division3_List.size(), 5);
+		assertEquals(District.Division4_List.size(), 7);
+		assertEquals(District.Division5_List.size(), 9);
+		assertEquals(District.Division6_List.size(), 4);
+		assertEquals(District.Division7_List.size(), 4);
+		assertEquals(District.Division8_List.size(), 8);
+		assertEquals(District.Division9_List.size(), 5);
+		
+		// Levels
 		
 	}
 	
@@ -76,12 +91,12 @@ class ResultDisplay {
 	void C_test() throws IOException {
 		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
 		FileIO.PersonalAddress_InputPath="input_sample3.txt";
-		FileIO instance = FileIO.getInstance();
+		//FileIO instance = FileIO.getInstance();
 		
 		// Set to a valid zip
 		Map<Integer, String> temp = new HashMap<Integer, String>();
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
-		instance.InputPeopleInfo = temp;
+		FileIO.InputPeopleInfo = temp;
 		
 		//	Determine if valid or invalid
 		DistinguishZipCodeFactory factory = new DistinguishZipCodeFactory();
@@ -93,7 +108,7 @@ class ResultDisplay {
 		
 		// Set to a invalid zip (incorrect ZIP code)
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 45122, 2");
-		instance.InputPeopleInfo = temp;
+		FileIO.InputPeopleInfo = temp;
 		
 		// Determine if valid or invalid
 		output = factory.GetPhaser("inValid");
