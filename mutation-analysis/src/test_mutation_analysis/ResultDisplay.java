@@ -33,14 +33,6 @@ class ResultDisplay {
 		Phaser valid = DZ.GetPhaser("valid");
 		Phaser invalid = DZ.GetPhaser("invalid");
 		
-		// Phaser for selection (Blue and red)
-		Selection selection = new Selection();
-		Selection blue = (Selection) selection.SelectionBluePhaser(); 
-		Selection red = (Selection) selection.SelectionRedPhaser();
-		
-		// Phaser for region and district info
-		District district = new District(); 
-		
 		// Blue and red group make sure not modified
 		assertEquals(Selection.SelectionBlueStateList.size(), 22);
 		assertEquals(Selection.SelectionRedStateList.size(), 30);
