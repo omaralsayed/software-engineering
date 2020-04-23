@@ -22,7 +22,7 @@ class ResultDisplay {
 	 * Check that results and levels are correctly matched
 	 * @throws IOException
 	 */
-	void A_test() throws IOException {
+	void A_test() throws IOException, CloneNotSupportedException {
 		
 		// FileIO setup
 		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
@@ -30,19 +30,25 @@ class ResultDisplay {
 				
 		DistinguishZipCodeFactory DZ = new DistinguishZipCodeFactory();
 		
-//		Phaser valid = DZ.GetPhaser("valid");
-//		Phaser invalid = DZ.GetPhaser("invalid");
+		Phaser valid = DZ.GetPhaser("valid");
+		Phaser invalid = DZ.GetPhaser("invalid");
 		
 		// Phaser for selection (Blue and red)
-//		Selection selection = new Selection();
-//		Selection blue = (Selection) selection.SelectionBluePhaser(); 
-//		Selection red = (Selection) selection.SelectionRedPhaser();
+		Selection selection = new Selection();
+		Selection blue = (Selection) selection.SelectionBluePhaser(); 
+		Selection red = (Selection) selection.SelectionRedPhaser();
 		
 		// Phaser for region and district info
-//		District district = new District(); 
+		District district = new District(); 
 		
-		// Blue and red group
-		//assertNotEquals();
+		// Blue and red group make sure not modified
+		assertEquals(Selection.SelectionBlueStateList.size(), 22);
+		assertEquals(Selection.SelectionRedStateList.size(), 30);
+		
+		// Region
+		
+		
+		// District
 		
 	}
 	
