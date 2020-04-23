@@ -114,5 +114,28 @@ class ResultDisplay {
 		assertTrue(output instanceof InValidZipCode);
 		
 	}
+	
+	@Test
+	void D_Test() throws IOException, CloneNotSupportedException {
+		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath="input_sample3.txt";
+		FileIO instance = FileIO.getInstance();
+		
+		// Setup user data and level
+		Map<Integer, String> temp = new HashMap<Integer, String>();
+		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
+		instance.InputPeopleInfo = temp;
+		
+		// Parse data through district object
+		District district = new District();
+		district.DistrictPhaser("District");
+		
+		// Obtain result
+		String result = District.AllDistrictResultList.get(0);
+		
+		// Check result
+		assertEquals(result, "name: Rachel Sanders; District information: West --> Division 9");
+		
+	}
 
 }
