@@ -56,8 +56,6 @@ class ResultDisplay {
 		assertEquals(District.Division8_List.size(), 8);
 		assertEquals(District.Division9_List.size(), 5);
 		
-		// Levels
-		
 	}
 	
 	@Test
@@ -91,7 +89,6 @@ class ResultDisplay {
 	void C_test() throws IOException {
 		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
 		FileIO.PersonalAddress_InputPath="input_sample3.txt";
-		//FileIO instance = FileIO.getInstance();
 		
 		// Set to a valid zip
 		Map<Integer, String> temp = new HashMap<Integer, String>();
