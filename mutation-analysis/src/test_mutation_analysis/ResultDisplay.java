@@ -70,5 +70,25 @@ class ResultDisplay {
 		assertEquals(totSize, 30);
 		
 	}
+	
+	@Test
+	void test() throws IOException {
+		// Setup fileIO, read from files
+		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath="input_sample3.txt";
+		FileIO instance = FileIO.getInstance();
+		
+		// Set to a valid zip
+		Map<Integer, String> temp = new HashMap<Integer, String>();
+		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
+		instance.InputPeopleInfo = temp;
+		
+		//	Determine if valid or invalid
+		DistinguishZipCodeFactory factory = new DistinguishZipCodeFactory();
+		Phaser output = factory.GetPhaser("Valid");
+		
+		//Check if output is correct class type
+		assertTrue(output instanceof ValidZipCode);
+	}
 
 }
