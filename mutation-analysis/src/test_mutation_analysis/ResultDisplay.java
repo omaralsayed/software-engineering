@@ -11,6 +11,7 @@ import java.util.Map;
 import DAO.FileIO;
 import business_logic.DistinguishZipCodeFactory;
 import business_logic.District;
+import business_logic.InValidZipCode;
 import business_logic.Selection;
 import business_logic.ValidZipCode;
 import business_logic.Phaser;
@@ -73,27 +74,32 @@ class ResultDisplay {
 	
 	@Test
 	void C_test() throws IOException {
+		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath="input_sample3.txt";
+		FileIO instance = FileIO.getInstance();
 		
-		// FileIO setup
-		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
-		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
-				
 		// Set to a valid zip
 		Map<Integer, String> temp = new HashMap<Integer, String>();
-		
-		// Add a temp value
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
+		instance.InputPeopleInfo = temp;
 		
-		FileIO.InputPeopleInfo = temp;
-		
-		// Determine if valid or invalid
+		//	Determine if valid or invalid
 		DistinguishZipCodeFactory factory = new DistinguishZipCodeFactory();
-		
-		// Get "Valid" output
 		Phaser output = factory.GetPhaser("Valid");
 		
-		// Check if output is of correct class type
+		//Check if output is correct class type
 		assertTrue(output instanceof ValidZipCode);
+		
+		
+		// Set to a invalid zip (incorrect ZIP code)
+		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 45122, 2");
+		instance.InputPeopleInfo = temp;
+		
+		// Determine if valid or invalid
+		output = factory.GetPhaser("inValid");
+		
+		//Check if output is correct class type
+		assertTrue(output instanceof InValidZipCode);
 		
 	}
 
