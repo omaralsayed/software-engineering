@@ -5,11 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import DAO.FileIO;
 import business_logic.DistinguishZipCodeFactory;
 import business_logic.District;
 import business_logic.Selection;
+import business_logic.ValidZipCode;
 import business_logic.Phaser;
 
 class ResultDisplay {
@@ -18,10 +21,10 @@ class ResultDisplay {
 	/**
 	 * Check that results and levels are correctly matched
 	 * @throws IOException
-	 * @throws CloneNotSupportedException
 	 */
-	void A_test() throws IOException, CloneNotSupportedException {
+	void A_test() throws IOException {
 		
+		// FileIO setup
 		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
 		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
 				
@@ -48,11 +51,11 @@ class ResultDisplay {
 	 * Check that the number of valid and invalid people 
 	 * matches the number of their zipcodes
 	 * @throws IOException
-	 * @throws CloneNotSupportedException
 	 */
 	
-	void B_test() throws IOException, CloneNotSupportedException {
+	void B_test() throws IOException {
 		
+		// FileIO setup
 		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
 		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
 				
@@ -64,7 +67,6 @@ class ResultDisplay {
 		int valSize = valid.GetSize();
 		int invSize = invalid.GetSize();
 		
-		// Arithmetic mutation friendly
 		int totSize = valSize + invSize;
 		
 		assertEquals(totSize, 30);
@@ -72,23 +74,29 @@ class ResultDisplay {
 	}
 	
 	@Test
-	void test() throws IOException {
-		// Setup fileIO, read from files
-		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
-		FileIO.PersonalAddress_InputPath="input_sample3.txt";
-		FileIO instance = FileIO.getInstance();
+	void C_test() throws IOException {
 		
+		// FileIO setup
+		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
+				
 		// Set to a valid zip
 		Map<Integer, String> temp = new HashMap<Integer, String>();
-		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
-		instance.InputPeopleInfo = temp;
 		
-		//	Determine if valid or invalid
+		// Add a temp value
+		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
+		
+		FileIO.InputPeopleInfo = temp;
+		
+		// Determine if valid or invalid
 		DistinguishZipCodeFactory factory = new DistinguishZipCodeFactory();
+		
+		// Get "Valid" output
 		Phaser output = factory.GetPhaser("Valid");
 		
-		//Check if output is correct class type
+		// Check if output is of correct class type
 		assertTrue(output instanceof ValidZipCode);
+		
 	}
 
 }
