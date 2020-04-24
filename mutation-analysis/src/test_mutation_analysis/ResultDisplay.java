@@ -20,20 +20,15 @@ class ResultDisplay {
 	
 	@Test
 	/**
-	 * Check that results and levels are correctly matched
+	 * Check if the results are correctly matched
 	 * @throws IOException
 	 */
-	void A_test() throws IOException, CloneNotSupportedException {
+	void A_test() throws IOException {
 		
 		// FileIO setup
 		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
 		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
-				
-		DistinguishZipCodeFactory DZ = new DistinguishZipCodeFactory();
-		
-		Phaser valid = DZ.GetPhaser("valid");
-		Phaser invalid = DZ.GetPhaser("invalid");
-		
+						
 		// Blue and red group make sure not modified
 		assertEquals(Selection.SelectionBlueStateList.size(), 22);
 		assertEquals(Selection.SelectionRedStateList.size(), 30);
@@ -60,11 +55,9 @@ class ResultDisplay {
 	
 	@Test
 	/** 
-	 * Check that the number of valid and invalid people 
-	 * matches the number of their zipcodes
+	 * Validate the total number of zipcodes processed
 	 * @throws IOException
 	 */
-	
 	void B_test() throws IOException {
 		
 		// FileIO setup
@@ -78,7 +71,6 @@ class ResultDisplay {
 		
 		int valSize = valid.GetSize();
 		int invSize = invalid.GetSize();
-		
 		int totSize = valSize + invSize;
 		
 		assertEquals(totSize, 30);
@@ -86,22 +78,27 @@ class ResultDisplay {
 	}
 	
 	@Test
+	/**
+	 * Validate output type (factory)
+	 * @throws IOException
+	 */
 	void C_test() throws IOException {
-		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
-		FileIO.PersonalAddress_InputPath="input_sample3.txt";
+		
+		// FileIO setup
+		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
 		
 		// Set to a valid zip
 		Map<Integer, String> temp = new HashMap<Integer, String>();
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
 		FileIO.InputPeopleInfo = temp;
 		
-		//	Determine if valid or invalid
+		// Determine if valid or invalid
 		DistinguishZipCodeFactory factory = new DistinguishZipCodeFactory();
 		Phaser output = factory.GetPhaser("Valid");
 		
-		//Check if output is correct class type
+		// Check if output is correct class type
 		assertTrue(output instanceof ValidZipCode);
-		
 		
 		// Set to a invalid zip (incorrect ZIP code)
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 45122, 2");
@@ -110,21 +107,28 @@ class ResultDisplay {
 		// Determine if valid or invalid
 		output = factory.GetPhaser("inValid");
 		
-		//Check if output is correct class type
+		// Check if output is correct class type
 		assertTrue(output instanceof InValidZipCode);
 		
 	}
 	
 	@Test
-	void D_Test() throws IOException, CloneNotSupportedException {
-		FileIO.ZipCodeInfo_InputPath="zipCode_info.xlsx";
-		FileIO.PersonalAddress_InputPath="input_sample3.txt";
-		FileIO instance = FileIO.getInstance();
+	/**
+	 * Validate level outputs
+	 * @throws IOException
+	 * @throws CloneNotSupportedException
+	 */
+	void D_test() throws IOException, CloneNotSupportedException {
+		
+		// FileIO setup
+		FileIO.ZipCodeInfo_InputPath = "zipCode_info.xlsx";
+		FileIO.PersonalAddress_InputPath = "input_sample3.txt";
 		
 		// Setup user data and level
 		Map<Integer, String> temp = new HashMap<Integer, String>();
 		temp.put(1, "name: Rachel Sanders,address: 777 Story Rd, San Jose, CA, 95122, 2");
-		instance.InputPeopleInfo = temp;
+		
+		FileIO.InputPeopleInfo = temp;
 		
 		// Parse data through district object
 		District district = new District();
